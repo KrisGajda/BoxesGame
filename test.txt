@@ -1,1 +1,2 @@
-Teraz wpiszemy jakiœ tekst.
+Teraz wpiszemy jakiœ coœ tam.
+Zamiast wyrazu "tekst" wpisaliœmy wyraz "coœ tam".
