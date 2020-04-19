@@ -34,22 +34,23 @@ Pamiętaj o:
 import random
 
 boxGift = [{"green": 1000}, {"orange": 4000}, {"purple": 9000}, {"legendary": 16000}]
-#collectedSum = []
 boxesYouWon = []
 
 def summary(newBox, collectedSum): #wszystkie wylosowane pudełka
     collectedSum.append(newBox)
     print(collectedSum)
 
-def will_box_find(boxChanceToFindPercentage, gifts):
+
+def will_box_find(boxChanceToFindPercentage, gifts): #losowanie pudełek
     isFindChance = random.uniform(0,100)
     collected = {"no_box": 0}
     if (isFindChance > boxChanceToFindPercentage):
         print("You found BOX!")
-        collected = (random.choices(gifts, [75, 20, 4, 1]))
+        collected = (random.choices(gifts, [75, 20, 4, 1])[0])
     else:
         print("You missed :(")
-    return summary(collected, boxesYouWon)
+    return summary(collected, boxesYouWon) # dodawanie pudełek do wszystkich wylosowanych
+
 
 
 gameLenght = 5
@@ -57,7 +58,7 @@ gameLenght = 5
 while gameLenght > 0:
     gameAnswer = input("Do you want to move forward? y/n")
     if gameAnswer == "y":
-        a = will_box_find(40, boxGift)
+        will_box_find(40, boxGift)
     else: continue
     gameLenght = gameLenght - 1
 
